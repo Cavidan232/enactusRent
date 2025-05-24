@@ -1,16 +1,36 @@
+
         :root {
             --primary-color: #28a745;
             --secondary-color: #ffc107;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
         }
         
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSExMWFRUVFRcYFhUWFhcVFhcVFRcWFxcYFxUYHSggGBolHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHR8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xABDEAABAwEEBQkGAwYGAwEAAAABAAIRAwQSITETQVFhkQUGFHGBocHR8AciQlKx4TJikhVDU3Ki8RYzgoOT0iNzwiT/xAAZAQEBAQEBAQAAAAAAAAAAAAABAgADBAX/xAAqEQACAgECBwAABgMAAAAAAAAAAQIREgMTBBQhMUFRYXGRobHw8SIyUv/aAAwDAQACEQMRAD8A9jhNdRIShdrPm4gi1NdRYTXU2TQKE0IsJoTZNASExCMWqJaqsKAwmLUYtUbqbJcQJamuo11RIVWS0CIUbqNdTXU2FAbqa6jXU11NhQEtUS1HhRupsKAlqa6jXU0KrNQAtTFqPdTXU2TiBuprqKWpBqcjYgRTTGmrEJFGTHBFa4m0aswnDQs5itMCxiM10JQNii5yl9Tov8Qzayjp1XJKiQhaaM9Usm0BVqkHWmITEKlCiXq33GwCt2esMoxVYBJrCckSSfcYyafQ0HWiNiJTtAhUhZzrHepizLi1E9ClL0baSncSuLz2erBkCAmIU7iVxNg4P0DhPdG1SLU0LWTj8IGmolqJCaEpnNxQKExaiwkmyMAJaolqsDqSncnI2BWupi1XB1JXdy2Y7RRupi1X7gUdEE5g9FlG6muq8aKbo4TuInZZRuprqumzb0xsyrcROzIpFqiWq4bNvTdG3pzRO1L0U7qa6rnR96XRhtTuI21IpQmIV42YJjZwtuIdmRVaE8N2lHNAJaAIyRajIplijcVt1EalA04VKZL0kVrqUKyAoO6ltwHpIBdSuqxTI3IgpnUAtugtAp3EWgzHELG52c+KFgIY9ulqHNjIlrcDLpyJBwGvcuOqe1t7mVblAB7nf+IuxDGwJvifeIxO/LBcZ8Qux2hw9dT1zSgDCFXdV3BeDf49toc9+nP/AJBBgNw+EXW/AQBmMdu+Fn9o9tYCBUaccS6/JOGwjcvPuo9GLPpSE6Gx4IkGQciDI4qUpPTaHSITSmJWNaHhNBTFya8khtEsU2KiXKJetRLkicpShmooGoqxIc0HlMUDSFNpSnEncQYtTFiDpilpk4snKIa4lcQtMkKqKZriFuprvqUK/wBaa/vWo1oNCSo2rlWlS/zKrGEanOAOG6ZXJ8re0Wm3Cgw1D8zpa3sGZ7kpNmckjuUl4lbOd1se+/p3tM4BpusH+kYEdcrQsXtGtbAA8U6say264nVi0gdyrbZG4j1wpivMKvtKtBAu0aTds3nY7sRwVa2e0i1fC2k3ddJni71CMWOaPVoUSF5U72sVQ2DQpXoxMuj9M+Kw7Z7RLYX3tMRn7rGsAjHMEb9c5BTaXkbPa69UNEkgdZA+qpv5Roj8VamOt7R4rwHlTl19Z1+o5z3EfE6cDqGwdSzKlvJgYD1tWepFLobGTPo79q0ACdPSwEn324DHf+V3ArG5X582OiCGv0rx8LAY7XkXYw36l4QaxIvEmBkPFMKkSScFzev8HBnt1D2iWN2DhUZjHvMBEbSWkwPJUeVvafZ6ciizSEa3C405ZGCcr2rUNq8fZay6Rq2k8FXqVROJ8BlnAUS123SRSg/J3fKHtMtJql4IYyABTaAQM5JcRJdHZwCtV/aRUNCoBVIe4kNc1t0hpjGI90gBxGJxd2LzaqwkCMgJkjM4fdRpsIBDjhgY71Km66svBFrlDlB9ZxqPeX1HmSXGXTtJ1dSHSaYLpAJygTh4BCpUm4mSQNXVmmfVJM+sVz+IoVV5OAGAxzx2ZSqdpvAxn2Sr7aYDSTMnE7kAhpx27ZTGXopHoXNznpaLD7rHh1PXSfJZJ1j5Ticu2V6hzb9olltIiqRZ6moPcCxw2tqYDsMdq+eLZapMDL1mh0rQQInKV6s3JW0cVFxPrala6bzDXtcQASGuBIByOGo4qbqgGJMBfKNg5Xq0XXqVV9N0ReY4tMbJGpX384q9chtao590Q0ucXQNgnqSkZtn01Z7XTqCWPa8bWuDhhvCIXb18y2C01GP0rHuY9pMOabrhtxGWsdS6/kL2mWqm67XYa7IAwAbUbGuQPe7eKpRXshyZ7SXqBeuVsHPqxVYmrona21mmmQdhcfd71eqc5rIMDaqP/I0nuKqkc3I2zUUb6w6vOiyNEm00oOx4PcFXfzxsQ/ft4P8AKEpIMjo9IVE1CuOre0CyjLSHqDf+yzq3tHBnR0SRqLnxtmQBtjCdqqgyPQL5SLyvI+V+fVpqC6xwpjGbgMwfzmSOyFls51W0iOkVI2yAdn4onZhK1Gs9ufVgEnAASScgBmSVg8o887NSJbf0jhqZBH6sl5JabfVf+KrUfnm9xG34iqjqoBmRlh62rUa2d9yr7QKzsKLRTGOJh57xA4LJqc8ra9sGvAI+FrWn9QE8Fy7KkDbhwjUoutkZkbvRWuKCpF6pUJMkycZJMkneVXFpnACN6rftBpzIMYnV4pqtsgSIB3oerFdzKDZac6MJ2ShPtbWjacsNUnUqRrEjZ3bVSfaYOoiYjMheaXESfSJ1jpGhX5TI9eGr7LPPKRMz9VStMl0qu0yc4U9X3Z2UEi860YSewIdO0FztpJ171XIgEa/DBRsxxnYilRVF6tVE7SB/fsUKdaZjHYOqVWq1YJER3woWerBncjHoNGg+SI7vts3pqRvDuG29r7MkzfwdfmcEaxthpMa4aNm0rlKVICNUhowyiJO5Rp5yYgZYeaEAXG7qmT1DbwRbZVAGeKn4YatUnLHwKETl9Nu/1tVVwwbBEOOZwHb61I9UYgSdWKrGikhnPJMTtGAOexNZaGMk4DMDHFDDPe1gEwN07FfLQxsazjJ17gtJ0qXkX06ELRGs4kZTnlioNDfiz6khULnAZADKduc71F7xOEeuxFeARWvFOHLZo2Gk79+1vWP+srUs/Nmi4XumUO17B9TIXsi77HNzrucoCVNpOpdazmpQ126gP9xni5XrHzPsRPv8o0o/LUpT3lVRO4jkaVofqHduhSFR96bpnHUcyvSKPNHkkR/+y8dvSKXgFpUObnJxwbanHd0keCGn4ohzPJW1ngmZM7ZUm2h8ZSNq9kZzRsZyqPd/vEop5lWQiLrj/uO8CqSfmgzPEnV3HtSpV3tyPZqXsr+YFi/hH/kf4FTp8xrEP3APW6of/pWkTuL0eWWGreGOeOGMq45znG61pmZyM9oXqDOaljaMLNS7WSeJVyjydTYLrGNaNjWwO5UQ2eQ1qTmx7pvHaDr3QjMsroBLHdoPcOK9YdZh6Cj0Yb1mgyPJqrXTdDXSBnBw8kFtmMn3CfzQe3+y9cdZm7ChOszdhRj6Zs/h5RTpvcCbjsDsIw155rJthqA4hw6wQF7NUsjTmJ64KA/k9hzY3gFK0+t2Vu/DyOy0HPypmBlAOfX4K3aLBVOVN3W6B9d69GdyNT1Bw6nEKvW5Gpn5v1E/VefU0dVu1X6nRasPp50+w14gtHWXDwlUK3Jdafw/1Bej1eb1M638R5KnV5tj5j3eSmOjqr0UteP8R58+wVvlOG8eaiOTq2ph4jzXc1ebv5j3IP7BI+M8Aq29X4O/D2cNWslRv4mO4T3hFsVjqEyKbo2kYDjgV2o5II+Inh5IrbBAiJ6yVE91L/U6rUg/Jw37PquOFN3XBjjkrlk5v2jO4d2MDEayuzaKgyDR66lEmprx4LzynxHZRNkvDX5nOt5uVCAHOa2PzSfDer1Pm8WiNII/lnvMRwWg+s8fD4qDq51+S809991+hS+NfmZ9Hm8ATeeCCMRGJjfgqz+bwN733EHqEdWC1+kjaEjbmjXKlT1UVjLxRhnmqHZ1HcBkrDubeV17pGuAe9arbaTlEdY8EWnaicsRt+6z1dYpQn8MT/CAJF6q7q90fRFr82ZbAeSdrj/1C1jVPxOw2DPig9JJN1o8kbus/JT051fQwmc0yPxV8fyj+6sO5qs/iv7FsUqYBkm84js4IxtPUs9fV8MNvU9Hn/R7u2VMMJXY0+Z9eoAQ0DsxW5Q9mxDRL8YxX1o5HnczzalRJW9yFyQXuJLQQNoB8F3lg9nlNrvecSIy3rrOTuQaFEG60Y7l0SOcpWcLyVYKYMGhTOOto8l1/JlmaDhQYOpo8lp0bDTbiGjPYrTXAZK0cmQZI+HuTl+5SdVQn1typEsY1dxSFTrQnVtyhpymmFoPf61EnrVd1cob6p2rBZYcoSqzqm9QLykLLJ60NxCA5yG5yADPcNqC5wQnFQcUmJucEF5CZ0oblrAi4hRkJnKKwDPAVd1PGd2SsFDcFrKRTFKC7eZH6WjwKRYjvCgQgQJYoFiMQoEIMCLEGtSBCsuCi5DKMurYxsVKrYwtp4VOqucoopNmQ+xhP0VX3BK6owiVkzLfSO08UzC5uIJHaQrtQIcKZacWWpyIC1u1ye0pul/l7/snIUYXPYgdFrzXk91bSACd7kTRqLqPqV7aOFgdKlpyiGghuoFUqJdkDaCm06Y0N6Qs6ehPURrqBqonR96ibOt0DqCL0xKLoU2gRYUAJUCrJopjRWs1FUlRlWjRTGiEWaioVEq4aIUDZwtZqKTihuV51nUDZlrNRQKG5X3WVCfZlrNRQcoq06zFN0VazUVSoFW3WZDdZitZqKblAq0bMUJ1AosaK5UCVYdRKE6mUNlJAioEIpYoOaixoA9qq1Gq3UVGrUUtiCc1PdUH1UjVwRaEHUahEBNVtAQekhS5IpINATXQq/SQm6UFOaGme6G2KJtq5P8AxbYyY6TS/UAOOSuUuV6Loiqwg7HtPivoYxPLc0bxtiY2mdax325mEOHEJjaU4oMmbGm3p9MVi9KUumocTZGwapQzXWS63HaoC1oxM5GsaybTrMFpSNdDiazSFdJ1cLMNZRNVGKNkanSAom0hZRqpjVRijZM1TaQoG1BZZqptItijZM0zalDpSzjUUTVWxRsmaJtKibSs81U2lWxQZMvm0KOnVE1VE1E0jWzQ06iayoaVLSIpDbLxqhQLwqekTaRTSFNlyQoljTqVcVU+lUs6Ik6kEN1AKJqKJqJSBtkLRZcFlWixmVr6VRc4LYWbI5irZzehTqWU3ZW8abZTmmIhG2bM4S1CDmq66blTkqXSBmst3JbrsxrXknpyTPRGaoyy5QJ3lXhYiQdyiywvPwhc0mdMkc8x429yIGDdjuCdnJ9U5U3/AKSpGw1B8Dv0rvnH2dMkRujdwR6VZzfwl7f5SR9CgaB4+F3BOxzhtTl6NaL7LZV/j1B/uP8ANW2WiuMRaK363HxWbRftaTwHgtKzBjvgeOqPJc5aziDcF3Rdp8sWtg/zw4fmYMO0iUWnzotQwLab+oEHuPgh07GDlf7fsE7uSSTOAx1gz5KFx1eTnWiy7S55P+Kg4fyvn6tWnZudVF2bnsOxzfESuefyXAEuAE4GCcs4MKPQs/ew7QN2GtdFx4bGk+x2VPlqkcqgKK3lWkcNI2YmJAMDXC439mz8QHGerMKH7KcMnAzvjxlHPxDY0/Z27bewzD24Z4jBO21NOTgeogrhTyfUyBaB/wCzUm6BUHxCQddSfqnnY/A5eHhnemoo6RcUyzVSIL8N75lFFFzR/mf1Eegtz0DcvH/o6/SJtIuSbpTlU4PMJwKv8Un/AFGE87AOXj7Oq0ibSLlH1qocBpch8x470WnXqn96ME87A3LfTpb6bSLnhUflp47JUXVXg/509hJ4BHPQ+hy/39zojUSFRc+y0VP4sj+TrT9KqD95P+gea3O6f03Lv2dBfSL1hC2u+ftDB5pulvwF8a82gZI5zT+jy7N3SJCqsJtuflebPUnda3j4xw8lnxen9KXDv2bukSL1zx5Sqj5Y2kffFTHK7xmG9gPmnmYFctI3CVElZA5Xf8reB80J3LT/AJWjPafHYClcTEOVkbZKa8sapyzUyuDVtwntxQmctPJi6Oogjhj4KuaiHKyN6+na2VkUuVfmZwPmArTeWGAYtcN8DzW5iHsOWnZZFlaJwzT07C0DIcFX/bVGJ97bkit5coxmeBUvVgyloSXg5hnOBmth7lYZy3T2OHZ91hiwv2tRRZHj5eK+bLS0vH7kUjcbypTP3A81MVaRxhp3wPJYHRX7GcUujnY3io2YeGGKOiDGEz7u3JqKxo3dfu+v7LmhSywH6lYpU41x/q+yiWl9Bo6H16hMW9Xasim5vz/1fZWGVW/xDxHkuThX9E0XnNnA/X7pnUhrAM+vBVtK3+IT1R2qYrDMOP8ASgeobRZGAB1Ji0zEA9yjeHz/AEUmDVfHAeBQ2Ya645sEdf2RWMAyb2YJx/MOH3U5G1S5MV+IMM/LinLJ+HuRS4RmeKa8DIz9danNmBhm7vUi3cU5qejKfSb/AK+tqbYpELkYwkaI+UfVTNT1j9clF1b1PmjJldiNJjAZdTDsIzIgnWIKiKQ+XvRDUaDn2dwUSGnE95PcqzZSIBm4DLXkmJ6lKo6DDRgMySfRUQ8ZHDqPmlMRPpTqaovpCMQMRGU6uvBI8MdfrcmEZXgNkR91SbKTHAAwEfRMBInCN2OzfvULrf4gE9WM7ZGP3UTgMHF3aII8vNUvxKVeyYpk/Lw14IQbrMDskf3UqV4TJ3DLz9QjUwYxPbkPultoboruBAj3Z14ITnHEQBrEBW78kSAMczHh6wTGm3AwDH5ZVKddzKVdwDQ7MTt3jdsQr2OIx14nqV2rSgQAOrHNCe10YAaxq3qlNFxaKrnazPf9U94nKD2Ths6slLRv1hwwkkRwBAxRqd/5TmfUAKnJFZoDTbOffPYhmm3WcdzoVoU88CMN4x34qvjrveHZE4JTsUznzYq4+ByTbHaD8LuEfVJJTzkq7I+fuMiKFcDEO7QUhpdk9h+qdJdo61rsi1KybGVD8J4I9OzOPwngmSUy1n6NfQO2xdnYitsQ29kJJKM2zLqEZYzMDPDaEbopGrqG/sSSXNyZWKDCh+Un1vRWtIyYe3Z90klycgxQwqATOEa5wTmr8RMDMTOMbBsSSXRRXT6Vig7XmCZOWWHoKIqmcQYjHHLfvTpLnSFRQr2sjbjjGrJSp1Wx+E8MO1JJak0OKGfXbmJI3DYh9KbkSeqPqkkusdKJUdNMmaoOMY9++eCg6uJ1YYa5TJIWmmK00ScY+wxiEIvw9ZakklOKs5Sj1JATjj2jdqThuGOJ+/XkkksZIQpzqnhxUTRAnDWY75wjBMklMugYwccHCcpMhELgMcw2Ukla6lKNjF4jP7b1JlXC8DOUnHAHKZ1eSSStaaZbiMytkQfD19kQVJA89kauHekkolBEYpiFQznx9daia8EguEasTMzlwSSQoonFWS0hxOGJ1/23fVJ9UD4tW5JJSopmxR//2Q==");
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+       .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945');
             background-size: cover;
             background-position: center;
-        min-height: 50vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             color: white;
+            position: relative;
+        
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light-color));
+            z-index: 1;
         }
         
         .property-card {
@@ -18,6 +38,7 @@
             border: none;
             border-radius: 15px;
             overflow: hidden;
+            margin-bottom: 30px;
         }
         
         .property-card:hover {
@@ -58,11 +79,13 @@
             padding: 12px 30px;
             border-radius: 25px;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
         
         .btn-custom:hover {
             background: #218838;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
         }
         
         .region-info {
@@ -71,6 +94,7 @@
             padding: 3rem 0;
             border-radius: 20px;
             margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.2);
         }
         
         .filter-section {
@@ -78,45 +102,99 @@
             padding: 2rem 0;
             border-radius: 15px;
             margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        /* New styles for regions section */
-        .regions-section {
-            padding: 4rem 0;
+        /* Region Navigation Section */
+        .region-nav-section {
+            padding: 60px 0;
+            background-color: var(--light-color);
         }
         
         .region-card {
+            border: none;
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
-            border: none;
+            height: 100%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .region-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .region-image {
-            height: 200px;
+        .region-card-img {
+            height: 180px;
             object-fit: cover;
-            width: 100%;
         }
         
-        .region-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0,0,0,0.7);
+        .region-card-body {
+            padding: 20px;
+            background: white;
+        }
+        
+        .region-card-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+        }
+        
+        .region-card-text {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .region-card-btn {
+            background: var(--primary-color);
             color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
         
+        .region-card-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        /* Navbar enhancements */
         .navbar {
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: white !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar.scrolled .nav-link {
+            color: var(--dark-color) !important;
+        }
+        
+        .navbar.scrolled .navbar-brand {
+            color: var(--primary-color) !important;
         }
         
         .dropdown-menu {
@@ -125,31 +203,38 @@
             border-radius: 10px;
         }
         
-        .dropdown-item {
-            border-radius: 5px;
-            margin: 2px 5px;
-            width: auto;
-        }
-        
         .dropdown-item:hover {
-            background-color: #f8f9fa;
+            background-color: var(--primary-color);
+            color: white !important;
         }
         
-        .nav-link {
-            position: relative;
+        /* Footer enhancements */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), #212529);
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
+        .footer-link {
+            color: #adb5bd;
+            transition: color 0.3s ease;
+            text-decoration: none;
         }
         
-        .nav-link:hover::after {
-            width: 100%;
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
         }
