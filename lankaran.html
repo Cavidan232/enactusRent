@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lənkəran - Kirayəlik Evlər | EnactusReant</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lənkəran-kirayəlik Evlər | EnactusReant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -32,7 +32,8 @@
                             <li><a class="dropdown-item" href="lankaran.html">Lənkəran</a></li>
                             <li><a class="dropdown-item" href="astara.html">Astara</a></li>
                             <li><a class="dropdown-item" href="lerik.html">Lerik</a></li>
-                            <li><a class="dropdown-item" href="masalli.html">Masallı</a></li>
+                              <li><a class="dropdown-item" href="yardımlı.html">Yardımlı</a></li>
+                            <li><a class="dropdown-item" href="masallı.html">Masallı</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -45,58 +46,50 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-3">Lənkəran Rayonu</h1>
-                    <p class="lead">Çay plantasiyaları və subtropik meyvələrin vətəni</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html" class="text-warning">Ana Səhifə</a></li>
-                            <li class="breadcrumb-item active text-white">Lənkəran</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+    <div class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="./lankaran.mp4" type="video/mp4" />
+            <!-- Əgər video dəstəklənmirsə, arxa plan şəkli göstəriləcək -->
+        </video>
+        <div class="hero-content">
+            <!-- Kontent burada -->
         </div>
-    </section>
+    </div>
 
     <!-- Region Navigation Section -->
     <section class="region-nav-section">
         <div class="container">
             <h2 class="section-title text-center">Digər Rayonlar</h2>
             <div class="row g-4">
-                <!-- Astara -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="card region-card">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" class="region-card-img" alt="Astara">
-                        <div class="region-card-body">
-                            <h5 class="region-card-title">Astara</h5>
-                            <p class="region-card-text">Sərhəd rayonu, subtropik iqlimi və dəniz sahili ilə məşhurdur.</p>
-                            <a href="astara.html" class="btn region-card-btn">Evlərə bax</a>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- Lerik -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card region-card">
-                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" class="region-card-img" alt="Lerik">
+                        <video src="./lerik.mp4" class="region-card-video" autoplay muted loop></video>
                         <div class="region-card-body">
                             <h5 class="region-card-title">Lerik</h5>
-                            <p class="region-card-text">Dağlıq ərazi, təmiz hava və uzunömürlülük diyarı.</p>
+                            <p class="region-card-text">Dağlıq və uzunömürlü sakinlərin vətəni.</p>
                             <a href="lerik.html" class="btn region-card-btn">Evlərə bax</a>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- Astara -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card region-card">
+                        <video src="./astara.mp4" class="region-card-video" autoplay muted loop></video>
+                        <div class="region-card-body">
+                            <h5 class="region-card-title">Astara</h5>
+                            <p class="region-card-text">Subtropik iqlimi və dəniz sahilinin birləşdiyi unikal rayon.</p>
+                            <a href="astara.html" class="btn region-card-btn">Evlərə bax</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Masallı -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card region-card">
-                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="region-card-img" alt="Masallı">
+                        <video src="./masalli.mp4" class="region-card-video" autoplay muted loop></video>
                         <div class="region-card-body">
                             <h5 class="region-card-title">Masallı</h5>
                             <p class="region-card-text">Meyvə bağları və təbii bulaqları ilə tanınır.</p>
@@ -104,11 +97,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Yardımlı -->
                 <div class="col-lg-3 col-md-6">
                     <div class="card region-card">
-                        <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda" class="region-card-img" alt="Yardımlı">
+                        <video src="./yardimli.mp4" class="region-card-video" autoplay muted loop></video>
                         <div class="region-card-body">
                             <h5 class="region-card-title">Yardımlı</h5>
                             <p class="region-card-text">Təbii gözəllikləri və mineral bulaqları ilə məşhurdur.</p>
@@ -126,68 +119,24 @@
             <div class="row align-items-center">
                 <div class="col-lg-4">
                     <div class="mb-3">
-                        <i class="fas fa-leaf fa-3x mb-3"></i>
-                        <h4>Çay Plantasiyaları</h4>
-                        <p>Azərbaycanın ən keyfiyyətli çayları</p>
+                        <i class="fas fa-seedling fa-3x mb-3"></i>
+                        <h4>Subtropik İqlim</h4>
+                        <p>İsti və nəm hava şəraiti</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="mb-3">
-                        <i class="fas fa-apple-alt fa-3x mb-3"></i>
-                        <h4>Subtropik Meyvələr</h4>
-                        <p>Feijoa, kivi və digər nadir meyvələr</p>
+                        <i class="fas fa-umbrella-beach fa-3x mb-3"></i>
+                        <h4>Dəniz Sahili</h4>
+                        <p>Uzun qumlu çimərliklər</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="mb-3">
-                        <i class="fas fa-mountain fa-3x mb-3"></i>
-                        <h4>Hirkan Meşələri</h4>
-                        <p>UNESCO-nun Dünya İrs Siyahısında</p>
+                        <i class="fas fa-apple-whole fa-3x mb-3"></i>
+                        <h4>Meyvə Bağları</h4>
+                        <p>Ləzzətli və təbii məhsullar</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="container">
-        <div class="filter-section">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <label class="form-label fw-bold">Qiymət aralığı</label>
-                    <select class="form-select">
-                        <option>Hamısı</option>
-                        <option>30-50 AZN</option>
-                        <option>50-70 AZN</option>
-                        <option>70+ AZN</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <label class="form-label fw-bold">Nəfər sayı</label>
-                    <select class="form-select">
-                        <option>Hamısı</option>
-                        <option>2-4 nəfər</option>
-                        <option>4-6 nəfər</option>
-                        <option>6+ nəfər</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <label class="form-label fw-bold">Rahatlıq</label>
-                    <select class="form-select">
-                        <option>Hamısı</option>
-                        <option>WiFi</option>
-                        <option>Parkinq</option>
-                        <option>Şömine</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-3">
-                    <label class="form-label fw-bold">Reytinq</label>
-                    <select class="form-select">
-                        <option>Hamısı</option>
-                        <option>5 ulduz</option>
-                        <option>4+ ulduz</option>
-                        <option>3+ ulduz</option>
-                    </select>
                 </div>
             </div>
         </div>
@@ -198,7 +147,7 @@
         <div class="row">
             <div class="col-12 mb-4">
                 <h2 class="section-title">Lənkərandakı Kirayəlik Evlər</h2>
-                <p class="text-muted">12 ev tapıldı</p>
+                <p class="text-muted">5 ev tapıldı</p>
             </div>
         </div>
 
@@ -207,12 +156,12 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card property-card h-100 shadow">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233" class="property-image" alt="Çay plantasiyası evi">
-                        <div class="price-badge">45 AZN/gün</div>
+                        <img src="./images/lankaran/lankaran1.jpg" class="property-image" alt="Dəniz evi" />
+                        <div class="price-badge">60 AZN/gün</div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Çay Plantasiyası Evi</h5>
+                            <h5 class="card-title fw-bold mb-0">Dəniz Kotteci</h5>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -223,35 +172,23 @@
                             </div>
                         </div>
                         <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Çay plantasiyası yanında
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran dəniz kənarı
                         </p>
-                        <p class="card-text">Çay yarpaqlarının ətri ilə oyananacağınız rahat ev. Çay yığımı təcrübəsi daxildir.</p>
-                        
+                        <p class="card-text">Dəniz kənarında sakit və rahat ev.</p>
+
                         <div class="row mb-3">
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 4 nəfər</small>
+                            <div class="col-4">
+                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 6 nəfər</small>
                             </div>
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 yataq</small>
+                            <div class="col-4">
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 3 otaq</small>
+                            </div>
+                              <div class="col-4">
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 3 otaq</small>
                             </div>
                         </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-wifi amenity-icon"></i> WiFi
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-car amenity-icon"></i> Parkinq
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-utensils amenity-icon"></i> Mətbəx
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
                     </div>
                 </div>
             </div>
@@ -260,51 +197,36 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card property-card h-100 shadow">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000" class="property-image" alt="Hirkan meşəsi evi">
-                        <div class="price-badge">55 AZN/gün</div>
+                        <img src="./images/lankaran/lankaran2.jpg" class="property-image" alt="Bağ evi" />
+                        <div class="price-badge">45 AZN/gün</div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Hirkan Meşəsi Evi</h5>
+                            <h5 class="card-title fw-bold mb-0">Bağ Evi</h5>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <small class="text-muted ms-1">(5.0)</small>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <small class="text-muted ms-1">(3.5)</small>
                             </div>
                         </div>
                         <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Hirkan Milli Parkı ətrafında
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran şəhəri
                         </p>
-                        <p class="card-text">Qədim Hirkan meşələrinin qoynunda yerləşən ekoloji təmiz ev.</p>
-                        
+                        <p class="card-text">Təmiz hava, böyük bağ və uşaqlar üçün yer.</p>
+
                         <div class="row mb-3">
                             <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 6 nəfər</small>
+                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 5 nəfər</small>
                             </div>
                             <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 3 yataq</small>
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 otaq</small>
                             </div>
                         </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-fire amenity-icon"></i> Şömine
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-tree amenity-icon"></i> Bağ
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-mountain amenity-icon"></i> Dağ mənzərəsi
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
                     </div>
                 </div>
             </div>
@@ -313,216 +235,40 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card property-card h-100 shadow">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1505142468610-359e7d316be0" class="property-image" alt="Feijoa bağı evi">
-                        <div class="price-badge">40 AZN/gün</div>
+                        <img src="./images/lankaran/lankaran3.jpg" class="property-image" alt="Şəhər evi" />
+                        <div class="price-badge">50 AZN/gün</div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Feijoa Bağı Evi</h5>
+                            <h5 class="card-title fw-bold mb-0">Şəhər Evi</h5>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
-                                <small class="text-muted ms-1">(4.2)</small>
+                                <small class="text-muted ms-1">(4.0)</small>
                             </div>
                         </div>
                         <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Feijoa bağları arasında
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran mərkəzi
                         </p>
-                        <p class="card-text">Nadir subtropik meyvələr arasında təbii həyat tərzi yaşayın.</p>
-                        
+                        <p class="card-text">Mərkəzdə, bütün şəraitlər mövcuddur.</p>
+
                         <div class="row mb-3">
                             <div class="col-6">
                                 <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 4 nəfər</small>
                             </div>
                             <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 yataq</small>
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 otaq</small>
                             </div>
                         </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-wifi amenity-icon"></i> WiFi
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-apple-alt amenity-icon"></i> Meyvə bağı
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-utensils amenity-icon"></i> Mətbəx
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Property 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card property-card h-100 shadow">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c78a" class="property-image" alt="Göl kənarı ev">
-                        <div class="price-badge">60 AZN/gün</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Xanbulançay Göl Evi</h5>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <small class="text-muted ms-1">(4.7)</small>
-                            </div>
-                        </div>
-                        <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Xanbulançay gölü kənarında
-                        </p>
-                        <p class="card-text">Su səthində əks olunan günəşin işığı altında rahat qalış.</p>
-                        
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 5 nəfər</small>
-                            </div>
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 yataq</small>
-                            </div>
-                        </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-fish amenity-icon"></i> Balıq ovu
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-water amenity-icon"></i> Su mənzərəsi
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-car amenity-icon"></i> Parkinq
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Property 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card property-card h-100 shadow">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6" class="property-image" alt="Kənd evi">
-                        <div class="price-badge">35 AZN/gün</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Geranboy Kənd Evi</h5>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <small class="text-muted ms-1">(4.1)</small>
-                            </div>
-                        </div>
-                        <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Geranboy kəndində
-                        </p>
-                        <p class="card-text">Ənənəvi kənd həyatını yaşamaq üçün ideal seçim.</p>
-                        
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 3 nəfər</small>
-                            </div>
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 yataq</small>
-                            </div>
-                        </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-home amenity-icon"></i> Ənənəvi
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-chicken amenity-icon"></i> Ferma
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-utensils amenity-icon"></i> Yerli yeməklər
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Property 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card property-card h-100 shadow">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c" class="property-image" alt="Dəniz yaxınlığında ev">
-                        <div class="price-badge">65 AZN/gün</div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h5 class="card-title fw-bold mb-0">Xəzər Sahili Evi</h5>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <small class="text-muted ms-1">(4.9)</small>
-                            </div>
-                        </div>
-                        <p class="text-muted mb-3">
-                            <i class="fas fa-map-marker-alt amenity-icon"></i> Xəzər dənizi sahilində
-                        </p>
-                        <p class="card-text">Dəniz küləyinin təravətli nəfəsi ilə dopdolu istirahət.</p>
-                        
-                        <div class="row mb-3">
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 6 nəfər</small>
-                            </div>
-                            <div class="col-6">
-                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 3 yataq</small>
-                            </div>
-                        </div>
-                        
-                        <div class="amenities mb-3">
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-water amenity-icon"></i> Dəniz mənzərəsi
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-umbrella-beach amenity-icon"></i> Çimərlik
-                            </span>
-                            <span class="badge bg-light text-dark me-1 mb-1">
-                                <i class="fas fa-wifi amenity-icon"></i> WiFi
-                            </span>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-success w-100 btn-custom">
-                            <i class="fas fa-calendar-check me-2"></i> Rezervasiya et
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Load More -->
+     <!-- Load More -->
         <div class="text-center mt-5">
             <button class="btn btn-outline-success btn-lg px-5 py-3">
                 <i class="fas fa-plus me-2"></i> Daha çox göstər
@@ -576,6 +322,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./script.js"></script>
 </body>
 </html>

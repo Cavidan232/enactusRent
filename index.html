@@ -1,1075 +1,323 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enactus Rent - Ev Kirayə Platforması</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #4fc3f7;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --success-color: #28a745;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .auth-buttons .btn {
-            margin-left: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-content {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .search-box {
-            background-color: white;
-            border-radius: 50px;
-            padding: 5px;
-            display: flex;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 15px 20px;
-            border-radius: 50px 0 0 50px;
-            outline: none;
-            font-size: 16px;
-        }
-
-        .search-box button {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 0 50px 50px 0;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .search-box button:hover {
-            background-color: var(--primary-color);
-        }
-
-        /* Categories Section */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: #6c757d;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .category-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .category-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .category-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .category-card:hover .category-img img {
-            transform: scale(1.1);
-        }
-
-        .category-info {
-            padding: 20px;
-        }
-
-        .category-info h3 {
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-
-        .category-info p {
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-
-        /* Featured Properties */
-        .properties {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .property-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .property-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .property-img {
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .property-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .property-card:hover .property-img img {
-            transform: scale(1.1);
-        }
-
-        .property-price {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-
-        .property-info {
-            padding: 20px;
-        }
-
-        .property-info h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-
-        .property-location {
-            display: flex;
-            align-items: center;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-
-        .property-location i {
-            margin-right: 5px;
-            color: var(--accent-color);
-        }
-
-        .property-features {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            margin-top: 15px;
-        }
-
-        .feature {
-            display: flex;
-            align-items: center;
-        }
-
-        .feature i {
-            margin-right: 5px;
-            color: var(--accent-color);
-        }
-
-        /* Featured Locations */
-        .locations {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .location-card {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('') center/cover;
-            height: 250px;
-            border-radius: 15px;
-            display: flex;
-            align-items: flex-end;
-            padding: 25px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .location-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .location-info h3 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .location-info p {
-            opacity: 0.9;
-        }
-
-        /* How It Works */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .step {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-color);
-            font-size: 30px;
-        }
-
-        .step h3 {
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--light-color);
-        }
-
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            margin: 0 15px;
-        }
-
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 5px solid var(--light-color);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-
-        .testimonial-role {
-            color: #6c757d;
-            font-size: 14px;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-            border-radius: 10px;
-        }
-
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #adb5bd;
-            font-size: 14px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .nav-links, .auth-buttons {
-                display: none;
-            }
-            
-            .hero {
-                height: 400px;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .search-box {
-                flex-direction: column;
-                border-radius: 10px;
-            }
-            
-            .search-box input {
-                border-radius: 10px 10px 0 0;
-            }
-            
-            .search-box button {
-                border-radius: 0 0 10px 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
-            }
-            
-            .cta h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lənkəran-kirayəlik Evlər | EnactusReant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header>
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-home"></i>
-                    EnactusRent
-                </a>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <ul class="nav-links">
-                    <li><a href="#">Ana Səhifə</a></li>
-                    <li><a href="#">Xüsusiyyətlər</a></li>
-                    <li><a href="#">Kateqoriyalar</a></li>
-                    <li><a href="#">İstirahət Əraziləri</a></li>
-                    <li><a href="#">Əlaqə</a></li>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-tree me-2"></i>
+                <span class="fw-bold">EnactusReant</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Səhifə</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Rayonlar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="lankaran.html">Lənkəran</a></li>
+                            <li><a class="dropdown-item" href="astara.html">Astara</a></li>
+                            <li><a class="dropdown-item" href="lerik.html">Lerik</a></li>
+                              <li><a class="dropdown-item" href="yardımlı.html">Yardımlı</a></li>
+                            <li><a class="dropdown-item" href="masallı.html">Masallı</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Haqqımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Əlaqə</a>
+                    </li>
                 </ul>
-                
-                <div class="auth-buttons">
-                    <a href="#" class="btn btn-outline">Daxil Ol</a>
-                    <a href="#" class="btn btn-primary">Qeydiyyat</a>
-                </div>
-            </nav>
+            </div>
         </div>
-    </header>
-
+    </nav>
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Xəyalınızdakı Rahatlığı Tapın</h1>
-                <p>Minlərlə ev, mənzil və istirahət məkanı arasından seçim edin. EnactusRent ilə asanlıqla kirayə alın.</p>
-                
-                <div class="search-box">
-                    <input type="text" placeholder="Lokasiya, ev növü və ya xüsusiyyət axtarın...">
-                    <button>Axtar</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popular Locations -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Məşhur Lokasiyalar</h2>
-                <p>Azərbaycanın ən gözəl şəhər və bölgələrindəki mülklər</p>
-            </div>
-            
-            <div class="locations">
-                <a href="#" class="location-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');">
-                    <div class="location-info">
-                        <h3>Bakı</h3>
-                        <p>320+ elan</p>
-                    </div>
-                </a>
-                
-                <a href="#" class="location-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                    <div class="location-info">
-                        <h3>Gəncə</h3>
-                        <p>85+ elan</p>
-                    </div>
-                </a>
-                
-                <a href="#" class="location-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                    <div class="location-info">
-                        <h3>Şəki</h3>
-                        <p>45+ elan</p>
-                    </div>
-                </a>
-                
-                <a href="#" class="location-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');">
-                    <div class="location-info">
-                        <h3>Xəzər</h3>
-                        <p>120+ elan</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kateqoriyaları Kəşf Et</h2>
-                <p>Müxtəlif ehtiyaclarınıza uyğun çeşidli yaşayış seçimlərimizi kəşf edin</p>
-            </div>
-            
-            <div class="categories">
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Evlər">
-                    </div>
-                    <div class="category-info">
-                        <h3>Evlər</h3>
-                        <p>Ailələr və qruplar üçün mükəmməl rahatlıq</p>
-                        <a href="#" class="btn btn-outline">Kəşf Et</a>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mənzillər">
-                    </div>
-                    <div class="category-info">
-                        <h3>Mənzillər</h3>
-                        <p>Şəhər həyatı üçün müasir həllər</p>
-                        <a href="#" class="btn btn-outline">Kəşf Et</a>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1510&q=80" alt="İstirahət Məkanları">
-                    </div>
-                    <div class="category-info">
-                        <h3>İstirahət Məkanları</h3>
-                        <p>Təbiətlə iç-içə unudulmaz anlar</p>
-                        <a href="#" class="btn btn-outline">Kəşf Et</a>
-                    </div>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lüks Villalar">
-                    </div>
-                    <div class="category-info">
-                        <h3>Lüks Villalar</h3>
-                        <p>Premium rahatlıq və gözəllik</p>
-                        <a href="#" class="btn btn-outline">Kəşf Et</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Properties -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Seçilmiş Elanlar</h2>
-                <p>Ən çox bəyənilən və qiymətləndirilən yaşayış seçimləri</p>
-            </div>
-            
-            <div class="properties">
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Müasir Mənzil">
-                        <div class="property-price">200₼/gün</div>
-                    </div>
-                    <div class="property-info">
-                        <h3>Müasir Şəhər Mənzili</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>28 May, Bakı</span>
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>2 Yataq</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>1 Hamam</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i>
-                                <span>85m²</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Lüks Villa">
-                        <div class="property-price">500₼/gün</div>
-                    </div>
-                    <div class="property-info">
-                        <h3>Dəniz Mənzərəli Villa</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Xəzər, Azərbaycan</span>
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>4 Yataq</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>3 Hamam</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i>
-                                <span>220m²</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="property-card">
-    <div class="property-img">
-        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kamp Çadırı">
-        <div class="property-price">80₼/gün</div>
-    </div>
-    <div class="property-info">
-        <h3>Təbiət Kamp Sahəsi</h3>
-        <div class="property-location">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Qəbələ, Azərbaycan</span>
-        </div>
-        <div class="property-features">
-            <div class="feature">
-                <i class="fas fa-users"></i>
-                <span>4 Nəfər</span>
-            </div>
-            <div class="feature">
-                <i class="fas fa-fire"></i>
-                <span>Kamp Atəşi</span>
-            </div>
-            <div class="feature">
-                <i class="fas fa-tree"></i>
-                <span>Meşə Mənzərəsi</span>
-            </div>
+    <div class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="./lankaran.mp4" type="video/mp4" />
+            <!-- Əgər video dəstəklənmirsə, arxa plan şəkli göstəriləcək -->
+        </video>
+        <div class="hero-content">
+            <!-- Kontent burada -->
         </div>
     </div>
-</div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn btn-primary">Bütün Elanları Gör</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- How It Works -->
-    <section class="section">
+    <!-- Region Navigation Section -->
+    <section class="region-nav-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Necə İşləyir?</h2>
-                <p>EnactusRent ilə yaşayış yeri tapmaq çox asandır</p>
-            </div>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-search"></i>
+            <h2 class="section-title text-center">Digər Rayonlar</h2>
+            <div class="row g-4">
+                <!-- Lerik -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card region-card">
+                        <video src="./lerik.mp4" class="region-card-video" autoplay muted loop></video>
+                        <div class="region-card-body">
+                            <h5 class="region-card-title">Lerik</h5>
+                            <p class="region-card-text">Dağlıq və uzunömürlü sakinlərin vətəni.</p>
+                            <a href="lerik.html" class="btn region-card-btn">Evlərə bax</a>
+                        </div>
                     </div>
-                    <h3>1. Kəşf Edin</h3>
-                    <p>Filtrlərdən istifadə edərək ehtiyaclarınıza uyğun yaşayış seçimlərini tapın.</p>
                 </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>2. Rezervasiya Edin</h3>
-                    <p>Uyğun tarixləri seçin və təhlükəsiz ödəniş ilə rezervasiya edin.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>3. Həzz Alın</h3>
-                    <p>Rahat yaşayışınızın ləzzətini çıxarın və unudulmaz xatirələr yaradın.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="section testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>İstifadəçi Rəyləri</h2>
-                <p>EnactusRent istifadəçilərinin təcrübələri</p>
-            </div>
-            
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="İstifadəçi" class="testimonial-img">
-                    <p class="testimonial-text">"EnactusRent sayəsində mükəmməl tətil evi tapdım. Proses çox asan və etibarlı idi. Mütləq tövsiyə edirəm!"</p>
-                    <h4 class="testimonial-author">Aygün M.</h4>
-                    <p class="testimonial-role">Müəllimə</p>
+                <!-- Astara -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card region-card">
+                        <video src="./astara.mp4" class="region-card-video" autoplay muted loop></video>
+                        <div class="region-card-body">
+                            <h5 class="region-card-title">Astara</h5>
+                            <p class="region-card-text">Subtropik iqlimi və dəniz sahilinin birləşdiyi unikal rayon.</p>
+                            <a href="astara.html" class="btn region-card-btn">Evlərə bax</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masallı -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card region-card">
+                        <video src="./masalli.mp4" class="region-card-video" autoplay muted loop></video>
+                        <div class="region-card-body">
+                            <h5 class="region-card-title">Masallı</h5>
+                            <p class="region-card-text">Meyvə bağları və təbii bulaqları ilə tanınır.</p>
+                            <a href="masalli.html" class="btn region-card-btn">Evlərə bax</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yardımlı -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card region-card">
+                        <video src="./yardimli.mp4" class="region-card-video" autoplay muted loop></video>
+                        <div class="region-card-body">
+                            <h5 class="region-card-title">Yardımlı</h5>
+                            <p class="region-card-text">Təbii gözəllikləri və mineral bulaqları ilə məşhurdur.</p>
+                            <a href="yardimli.html" class="btn region-card-btn">Evlərə bax</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section">
-        <div class="container">
-            <div class="cta">
-                <h2>Evini və ya İstirahət Məkanını Kirayə Ver</h2>
-                <p>Mülkünüzü EnactusRent ilə kirayə verərək əlavə gəlir əldə edin. Təhlükəsiz və asan şəkildə kirayəçi tapın.</p>
-                <a href="#" class="btn btn-primary" style="background-color: white; color: var(--primary-color);">Elan Ver</a>
+    <!-- Region Info -->
+    <section class="container my-5">
+        <div class="region-info text-center">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <i class="fas fa-seedling fa-3x mb-3"></i>
+                        <h4>Subtropik İqlim</h4>
+                        <p>İsti və nəm hava şəraiti</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <i class="fas fa-umbrella-beach fa-3x mb-3"></i>
+                        <h4>Dəniz Sahili</h4>
+                        <p>Uzun qumlu çimərliklər</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <i class="fas fa-apple-whole fa-3x mb-3"></i>
+                        <h4>Meyvə Bağları</h4>
+                        <p>Ləzzətli və təbii məhsullar</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Properties -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h2 class="section-title">Lənkərandakı Kirayəlik Evlər</h2>
+                <p class="text-muted">5 ev tapıldı</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Property 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card property-card h-100 shadow">
+                    <div class="position-relative">
+                        <img src="./images/lankaran/lankaran1.jpg" class="property-image" alt="Dəniz evi" />
+                        <div class="price-badge">60 AZN/gün</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title fw-bold mb-0">Dəniz Kotteci</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <small class="text-muted ms-1">(4.5)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3">
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran dəniz kənarı
+                        </p>
+                        <p class="card-text">Dəniz kənarında sakit və rahat ev.</p>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 6 nəfər</small>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 3 otaq</small>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card property-card h-100 shadow">
+                    <div class="position-relative">
+                        <img src="./images/lankaran/lankaran2.jpg" class="property-image" alt="Bağ evi" />
+                        <div class="price-badge">45 AZN/gün</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title fw-bold mb-0">Bağ Evi</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <small class="text-muted ms-1">(3.5)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3">
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran şəhəri
+                        </p>
+                        <p class="card-text">Təmiz hava, böyük bağ və uşaqlar üçün yer.</p>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 5 nəfər</small>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 otaq</small>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card property-card h-100 shadow">
+                    <div class="position-relative">
+                        <img src="./images/lankaran/lankaran3.jpg" class="property-image" alt="Şəhər evi" />
+                        <div class="price-badge">50 AZN/gün</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title fw-bold mb-0">Şəhər Evi</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <small class="text-muted ms-1">(4.0)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted mb-3">
+                            <i class="fas fa-map-marker-alt amenity-icon"></i> Lənkəran mərkəzi
+                        </p>
+                        <p class="card-text">Mərkəzdə, bütün şəraitlər mövcuddur.</p>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-users amenity-icon"></i> 4 nəfər</small>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted"><i class="fas fa-bed amenity-icon"></i> 2 otaq</small>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-success w-100">Rezervasiya et</a>
+                    </div>
+                </div>
+            </div>
+     <!-- Load More -->
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-success btn-lg px-5 py-3">
+                <i class="fas fa-plus me-2"></i> Daha çox göstər
+            </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>EnactusRent</h3>
-                    <p>Xəyalınızdakı rahatlığı tapmağın ən asan yolu. Minlərlə ev, mənzil və istirahət məkanı arasından seçim edin.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-4">EnactusReant</h5>
+                    <p>Kənd turizminin inkişafı və yerli mədəniyyətin təbliği üçün çalışırıq.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Sürətli Keçidlər</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Ana Səhifə</a></li>
-                        <li><a href="#">Haqqımızda</a></li>
-                        <li><a href="#">Xüsusiyyətlər</a></li>
-                        <li><a href="#">İstirahət Məkanları</a></li>
-                        <li><a href="#">Əlaqə</a></li>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Səhifələr</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Ana Səhifə</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Haqqımızda</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Xidmətlər</a></li>
+                        <li class="mb-2"><a href="#" class="footer-link">Əlaqə</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Kateqoriyalar</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Evlər</a></li>
-                        <li><a href="#">Mənzillər</a></li>
-                        <li><a href="#">Villalar</a></li>
-                        <li><a href="#">İstirahət Məkanları</a></li>
-                        <li><a href="#">Lüks Yaşayışlar</a></li>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Rayonlar</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="lankaran.html" class="footer-link">Lənkəran</a></li>
+                        <li class="mb-2"><a href="astara.html" class="footer-link">Astara</a></li>
+                        <li class="mb-2"><a href="lerik.html" class="footer-link">Lerik</a></li>
+                        <li class="mb-2"><a href="masalli.html" class="footer-link">Masallı</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Əlaqə</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 1234 Enactus Küçəsi, Bakı</li>
-                        <li><i class="fas fa-phone"></i> +994 55 123 45 67</li>
-                        <li><i class="fas fa-envelope"></i> info@enactusrent.az</li>
-                    </ul>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-4">Əlaqə</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Lənkəran şəhəri, Azərbaycan</p>
+                    <p><i class="fas fa-phone me-2"></i> +994 12 345 67 89</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@enactusreant.az</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 EnactusRent. Bütün hüquqlar qorunur.</p>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Enactus LSU Team. Bütün hüquqlar qorunur.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const authButtons = document.querySelector('.auth-buttons');
-            
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-                authButtons.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                authButtons.style.display = 'block';
-                
-                // Adjust for mobile
-                if (window.innerWidth <= 768) {
-                    navLinks.style.flexDirection = 'column';
-                    navLinks.style.position = 'absolute';
-                    navLinks.style.top = '70px';
-                    navLinks.style.left = '0';
-                    navLinks.style.width = '100%';
-                    navLinks.style.backgroundColor = 'white';
-                    navLinks.style.padding = '20px';
-                    navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-                    
-                    authButtons.style.position = 'absolute';
-                    authButtons.style.top = 'calc(70px + ' + navLinks.offsetHeight + 'px)';
-                    authButtons.style.left = '0';
-                    authButtons.style.width = '100%';
-                    authButtons.style.backgroundColor = 'white';
-                    authButtons.style.padding = '20px';
-                    authButtons.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-                    
-                    // Adjust links
-                    const links = navLinks.querySelectorAll('li');
-                    links.forEach(link => {
-                        link.style.margin = '10px 0';
-                    });
-                }
-            }
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.navbar') && window.innerWidth <= 768) {
-                document.querySelector('.nav-links').style.display = 'none';
-                document.querySelector('.auth-buttons').style.display = 'none';
-            }
-        });
-        
-        // Testimonial Slider (basic version)
-        const testimonials = [
-            {
-                img: "https://randomuser.me/api/portraits/women/32.jpg",
-                text: "\"EnactusRent sayəsində mükəmməl tətil evi tapdım. Proses çox asan və etibarlı idi. Mütləq tövsiyə edirəm!\"",
-                author: "Aygün M.",
-                role: "Müəllimə"
-            },
-            {
-                img: "https://randomuser.me/api/portraits/men/45.jpg",
-                text: "\"İstirahət məkanı kirayələmək heç bu qədər asan olmamışdı. Əla təcrübə yaşadıq, təşəkkürlər EnactusRent!\"",
-                author: "Rəşad Ə.",
-                role: "Freelancer"
-            },
-            {
-                img: "https://randomuser.me/api/portraits/women/68.jpg",
-                text: "\"Evimi kirayə verərək əlavə gəlir əldə edirəm. Platforma çox istifadəçi dostu və təhlükəsizdir.\"",
-                author: "Zərifə N.",
-                role: "Memar"
-            }
-        ];
-        
-        let currentTestimonial = 0;
-        const testimonialElement = document.querySelector('.testimonial');
-        
-        function showTestimonial(index) {
-            const testimonial = testimonials[index];
-            testimonialElement.innerHTML = `
-                <img src="${testimonial.img}" alt="İstifadəçi" class="testimonial-img">
-                <p class="testimonial-text">${testimonial.text}</p>
-                <h4 class="testimonial-author">${testimonial.author}</h4>
-                <p class="testimonial-role">${testimonial.role}</p>
-            `;
-        }
-        
-        // Auto-rotate testimonials
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-        
-        // Initialize
-        showTestimonial(0);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
